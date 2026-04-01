@@ -126,7 +126,7 @@ class ChapterGenerationNode(BaseNode):
     }
     # 章节若仅包含标题或字符过少则视为失败，强制LLM重新生成
     _MIN_NON_HEADING_BLOCKS = 2
-    _MIN_BODY_CHARACTERS = 600
+    _MIN_BODY_CHARACTERS = 400 # 原為600，考虑到部分章节可能较短，先调整为400观察效果
     _MIN_NARRATIVE_CHARACTERS = 300
     _PARAGRAPH_FRAGMENT_MAX_CHARS = 80
     _PARAGRAPH_FRAGMENT_NO_TERMINATOR_MAX_CHARS = 240

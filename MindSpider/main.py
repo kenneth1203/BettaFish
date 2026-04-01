@@ -153,7 +153,9 @@ class MindSpider:
                 [sys.executable, str(init_script)],
                 cwd=self.schema_path,
                 capture_output=True,
-                text=True
+                text=True,
+                encoding="utf-8",
+                errors="replace",
             )
             
             if result.returncode == 0:
@@ -242,7 +244,9 @@ class MindSpider:
                     cmd,
                     capture_output=True,
                     text=True,
-                    timeout=300  # 5分钟超时
+                    timeout=300,  # 5分钟超时
+                    encoding="utf-8",
+                    errors="replace",
                 )
                 if result.returncode == 0:
                     marker_file.touch()

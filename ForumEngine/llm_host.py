@@ -211,8 +211,10 @@ class ForumHost:
     def _call_qwen_api(self, system_prompt: str, user_prompt: str) -> Dict[str, Any]:
         """调用Qwen API"""
         try:
-            current_time = datetime.now().strftime("%Y年%m月%d日%H时%M分")
-            time_prefix = f"今天的实际时间是{current_time}"
+            #current_time = datetime.now().strftime("%Y年%m月%d日%H时%M分")
+            #time_prefix = f"今天的实际时间是{current_time}"
+            current_time = datetime.now().strftime("%Y-%m-%d %H:%M")
+            time_prefix = f"Current local time: {current_time}"
             if user_prompt:
                 user_prompt = f"{time_prefix}\n{user_prompt}"
             else:
