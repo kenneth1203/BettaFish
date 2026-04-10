@@ -30,7 +30,7 @@ class PlatformCrawler:
     def __init__(self):
         """初始化平台爬虫管理器"""
         self.mediacrawler_path = Path(__file__).parent / "MediaCrawler"
-        self.supported_platforms = ['xhs', 'dy', 'ks', 'bili', 'wb', 'tieba', 'zhihu']
+        self.supported_platforms = ['xhs', 'rednote', 'dy', 'ks', 'bili', 'wb', 'tieba', 'zhihu']
         self.crawl_stats = {}
         
         # 确保MediaCrawler子模块已初始化
@@ -200,7 +200,7 @@ postgres_db_config = {{
 
                 replaced = None
                 if line.startswith('PLATFORM = '):
-                    replaced = f'PLATFORM = "{platform}"  # 平台，xhs | dy | ks | bili | wb | tieba | zhihu'
+                    replaced = f'PLATFORM = "{platform}"  # 平台，xhs | rednote | dy | ks | bili | wb | tieba | zhihu'
                 elif line.startswith('KEYWORDS = '):
                     replaced = f'KEYWORDS = "{keywords_str}"  # 关键词搜索配置，以英文逗号分隔'
                 elif line.startswith('CRAWLER_TYPE = '):

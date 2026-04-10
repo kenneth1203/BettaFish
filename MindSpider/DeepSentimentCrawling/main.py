@@ -25,7 +25,7 @@ class DeepSentimentCrawling:
         """初始化深度情感爬取"""
         self.keyword_manager = KeywordManager()
         self.platform_crawler = PlatformCrawler()
-        self.supported_platforms = ['xhs', 'dy', 'ks', 'bili', 'wb', 'tieba', 'zhihu']
+        self.supported_platforms = ['xhs', 'rednote', 'dy', 'ks', 'bili', 'wb', 'tieba', 'zhihu']
     
     def run_daily_crawling(self, target_date: date = None, platforms: List[str] = None, 
                           max_keywords_per_platform: int = 50, 
@@ -166,6 +166,7 @@ class DeepSentimentCrawling:
         
         platform_info = {
             'xhs': '小红书 - 美妆、生活、时尚内容为主',
+            'rednote': 'RedNote - 小红书国际版内容',
             'dy': '抖音 - 短视频、娱乐、生活内容',
             'ks': '快手 - 生活、娱乐、农村题材内容',
             'bili': 'B站 - 科技、学习、游戏、动漫内容',
@@ -195,10 +196,10 @@ def main():
     
     # 基本参数
     parser.add_argument("--date", type=str, help="目标日期 (YYYY-MM-DD)，默认为今天")
-    parser.add_argument("--platform", type=str, choices=['xhs', 'dy', 'ks', 'bili', 'wb', 'tieba', 'zhihu'], 
+    parser.add_argument("--platform", type=str, choices=['xhs', 'rednote', 'dy', 'ks', 'bili', 'wb', 'tieba', 'zhihu'], 
                        help="指定单个平台进行爬取")
     parser.add_argument("--platforms", type=str, nargs='+', 
-                       choices=['xhs', 'dy', 'ks', 'bili', 'wb', 'tieba', 'zhihu'],
+                       choices=['xhs', 'rednote', 'dy', 'ks', 'bili', 'wb', 'tieba', 'zhihu'],
                        help="指定多个平台进行爬取")
     
     # 爬取参数

@@ -443,7 +443,7 @@ class MindSpider:
         logger.info("MindSpider项目初始化完成！")
         return True
 
-PLATFORM_CHOICES = ['xhs', 'dy', 'ks', 'bili', 'wb', 'tieba', 'zhihu']
+PLATFORM_CHOICES = ['xhs', 'rednote', 'dy', 'ks', 'bili', 'wb', 'tieba', 'zhihu']
 
 PLATFORM_ALIASES = {
     'weibo': 'wb', 'webo': 'wb', '微博': 'wb',
@@ -451,6 +451,7 @@ PLATFORM_ALIASES = {
     'kuaishou': 'ks', '快手': 'ks',
     'bilibili': 'bili', 'b站': 'bili', 'bstation': 'bili',
     'xiaohongshu': 'xhs', '小红书': 'xhs', 'redbook': 'xhs',
+    'rednote': 'rednote', '小紅書國際版': 'rednote', '小红书国际版': 'rednote',
     'zhihu': 'zhihu', '知乎': 'zhihu',
     'tieba': 'tieba', '贴吧': 'tieba',
 }
